@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import MenuLinkComponent from '../MenuLinks';
 
 import { MenuStyled } from './styles';
