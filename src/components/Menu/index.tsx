@@ -5,7 +5,7 @@ import { MenuStyled } from './styles';
 
 export function Menu(): JSX.Element {
   return (
-    <MenuStyled>
+    <MenuStyled className="bg-red-500">
       <MenuLinkComponent href="/" text="Home" className="link-menu" />
     </MenuStyled>
   );
