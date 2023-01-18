@@ -36,10 +36,13 @@ export default class MyDocument extends Document {
   }
 
   render() {
+    const handleScroll = () => {
+      console.log('Olá mundo!!');
+    };
     return (
       <Html lang="pt-BR">
         <Head />
-        <body>
+        <body onScroll={() => handleScroll}>
           <Main />
           <NextScript />
         </body>
