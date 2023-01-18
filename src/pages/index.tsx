@@ -1,36 +1,40 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Menu } from '../components/Menu';
+import { ButtonInsc } from '../components/Menu/button';
 import PulseNext from '../components/PulseNext';
 
 export default function Home() {
-  const [wintest, setWinTest] = useState<Window & typeof globalThis>();
-  const ref = useRef<null | HTMLInputElement>(null);
+  const [windowState, setWindowState] = useState<Window & typeof globalThis>();
+  const [refTest, setRefTest] = useState(false);
+  // const ref = useRef<null | HTMLElement>(null);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') setWinTest(window);
+    if (typeof window !== 'undefined') setWindowState(window);
   });
 
-  wintest?.addEventListener('scroll', () => {
-    let win;
-    if (typeof window !== 'undefined') win = window.scrollY;
-    const cur = ref.current;
-    const topdiv = cur?.offsetTop.toLocaleString();
-    console.log(win, topdiv);
+  windowState?.addEventListener('scroll', () => {
+    if (typeof window === 'undefined') return;
+    const win: number = window.scrollY;
+    if (win !== 0) setRefTest(true);
+    else setRefTest(false);
+    console.log(win);
   });
 
   return (
-    <div className="bg-red-900">
-      <Menu />
-      <div className="bg-red-300 text-center h-96 relative overflow-x-scroll">
-        <input type="text" ref={ref} />
-        <PulseNext />
+    <>
+      <Menu classTest={refTest} />
+      <ButtonInsc />
+      <div className="pt-32 bg-black">
+        <div className="bg-gradient-to-b to-red-600 from-black text-center h-96 relative">
+          <PulseNext />
+        </div>
+        <div className="bg-red-600 text-center h-96 relative">
+          <PulseNext />
+        </div>
+        <div className="bg-red-600 text-center h-96 relative">
+          <PulseNext />
+        </div>
       </div>
-      <div className="bg-red-300 text-center h-96 relative">
-        <PulseNext />
-      </div>
-      <div className="text-center h-96 relative">
-        <PulseNext />
-      </div>
-    </div>
+    </>
   );
 }

@@ -21,4 +21,18 @@ body {
   padding: 15px;
   border-right: 1px solid black;
 }
+& [data-header] {
+  transition: 1.0s;
+  & [data-right] {
+    transition:1.6s;
+  }
+}
+& [data-header].header {
+      opacity: 0;
+      z-index: -1;
+      & [data-right] {
+        transform: translate3d(400px,0,0);
+      };
+}
+
 `;

@@ -1,22 +1,34 @@
-import React from 'react';
+import React, { RefObject } from 'react';
 
 import { MenuStyled } from './styles';
 
-export function Menu(): JSX.Element {
+type Ref = {
+  classTest: boolean;
+};
+
+export function Menu({ classTest }: Ref): JSX.Element {
   return (
-    <MenuStyled className="bg-gradient-to-tl to-red-600 from-black bg-opacity-95 flex flex-col p-4 md:flex-row md:justify-between md:p-2 md:w-screen md:h-32">
-      <div className="flex flex-row justify-center items-center order-2 md:justify-start md:flex-1 md:ml-4 md:order-1">
+    <MenuStyled
+      className={`bg-black flex flex-col p-4 md:flex-row md:justify-between md:p-2 md:w-screen md:h-32 md:fixed md:z-10 ${
+        classTest ? 'header' : ''
+      }`}
+      data-header
+    >
+      <div
+        className="flex flex-row justify-center items-center order-2 md:justify-start md:flex-1 md:ml-4 md:order-1"
+        data-left
+      >
         <div className="flex flex-row justify-center p-2">
-          <button
-            type="button"
-            className="transition duration-300 border-2 border-red-500 hover:bg-red-500 rounded h-12 w-36 p-2 text-white font-bold"
-          >
+          <button type="button" className="btn-inscrever">
             Inscrever-se
           </button>
         </div>
       </div>
       <div className="flex flex-row justify-center items-center order-1 md:order-2" />
-      <div className="flex flex-col justify-center p-2 order-3 md:flex-row md:flex-1 md:justify-end md:mr-4 md:order-3">
+      <div
+        className="flex flex-col justify-center p-2 order-3 md:flex-row md:flex-1 md:justify-end md:mr-4 md:order-3"
+        data-right
+      >
         <div className="hidden md:flex md:flex-row md:justify-end md:items-center">
           <form className=" h-10">
             <input
