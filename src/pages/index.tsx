@@ -24,16 +24,12 @@ export default function Home() {
     <>
       <Menu classTest={refTest} />
       <ButtonInsc />
-      <div className="pt-32 bg-black">
-        <div className="bg-gradient-to-b to-red-600 from-black text-center h-96 relative">
+      <div className=" bg-black">
+        <div className="bg-gradient-to-b to-red-800 from-black text-center h-screen relative">
           <PulseNext />
         </div>
-        <div className="bg-red-600 text-center h-96 relative">
-          <PulseNext />
-        </div>
-        <div className="bg-red-600 text-center h-96 relative">
-          <PulseNext />
-        </div>
+        <div className="bg-red-800 text-center h-96 relative" />
+        <div className="bg-red-800 text-center h-96 relative" />
       </div>
     </>
   );

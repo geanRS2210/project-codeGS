@@ -9,7 +9,7 @@ type Ref = {
 export function Menu({ classTest }: Ref): JSX.Element {
   return (
     <MenuStyled
-      className={`bg-black flex flex-col p-4 md:flex-row md:justify-between md:p-2 md:w-screen md:h-32 md:fixed md:z-10 ${
+      className={`bg-black flex flex-col p-4 shadow-2xl shadow-black md:flex-row md:justify-between md:p-2 md:w-screen md:h-32 md:fixed md:z-10 ${
         classTest ? 'header' : ''
       }`}
       data-header
@@ -38,7 +38,7 @@ export function Menu({ classTest }: Ref): JSX.Element {
             />
             <button
               type="submit"
-              className="transition duration-300 text-red-600 font-bold hover:text-red-700"
+              className="transition duration-300 text-red-600 font-bold hover:text-red-700 focus:outline-none focus:text-red-700"
             >
               Entrar
             </button>

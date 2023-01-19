@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .btn-inscrever {
-    @apply transition duration-300 border-2 border-red-500 hover:bg-red-500 rounded h-12 w-36 p-2 text-white font-bold
+    @apply transition duration-300 border border-red-500 hover:bg-red-500 rounded h-12 w-36 p-2 text-white font-bold focus:outline-none focus:bg-red-500
 }

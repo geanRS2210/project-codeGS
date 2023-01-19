@@ -22,7 +22,7 @@ body {
   border-right: 1px solid black;
 }
 & [data-header] {
-  transition: 1.0s;
+  transition: 0.4s;
   & [data-right] {
     transition:1.6s;
   }
