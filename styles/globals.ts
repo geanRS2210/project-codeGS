@@ -21,18 +21,25 @@ body {
   padding: 15px;
   border-right: 1px solid black;
 }
+.invisible {
+  opacity: 0;
+  z-index: -10;
+  position: absolute;
+}
 & [data-header] {
   transition: 0.4s;
   & [data-right] {
-    transition:1.6s;
+    transition:1s;
   }
 }
-& [data-header].header {
+@media (min-width: 768px) {
+  & [data-header].header {
       opacity: 0;
       z-index: -1;
       & [data-right] {
         transform: translate3d(400px,0,0);
       };
+}
 }
 
 `;

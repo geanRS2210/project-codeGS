@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import Introducer from '../components/ContainerIntroduce';
 import { Menu } from '../components/Menu';
 import { ButtonInsc } from '../components/Menu/button';
 import PulseNext from '../components/PulseNext';
@@ -6,6 +7,7 @@ import PulseNext from '../components/PulseNext';
 export default function Home() {
   const [windowState, setWindowState] = useState<Window & typeof globalThis>();
   const [refTest, setRefTest] = useState(false);
+  const [buttonInvisible, setButtonInvisible] = useState(true);
   // const ref = useRef<null | HTMLElement>(null);
 
   useEffect(() => {
@@ -17,19 +19,21 @@ export default function Home() {
     const win: number = window.scrollY;
     if (win !== 0) setRefTest(true);
     else setRefTest(false);
+
+    if (win >= 565) setButtonInvisible(false);
+    else setButtonInvisible(true);
+
     console.log(win);
   });
 
   return (
     <>
       <Menu classTest={refTest} />
-      <ButtonInsc />
-      <div className=" bg-black">
-        <div className="bg-gradient-to-b to-red-800 from-black text-center h-screen relative">
-          <PulseNext />
-        </div>
-        <div className="bg-red-800 text-center h-96 relative" />
-        <div className="bg-red-800 text-center h-96 relative" />
+      <ButtonInsc invisible={buttonInvisible} />
+      <div className="">
+        <Introducer />
+        <div className="bg-yellow-700 text-center h-96 relative" />
+        <div className="bg-yellow-700 text-center h-96 relative" />
       </div>
     </>
   );

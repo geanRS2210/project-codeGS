@@ -9,7 +9,7 @@ type Ref = {
 export function Menu({ classTest }: Ref): JSX.Element {
   return (
     <MenuStyled
-      className={`bg-black flex flex-col p-4 shadow-2xl shadow-black md:flex-row md:justify-between md:p-2 md:w-screen md:h-32 md:fixed md:z-10 ${
+      className={`bg-gray-900 flex flex-col p-4 md:flex-row md:justify-between md:p-2 md:w-screen md:h-32 md:fixed md:z-10 ${
         classTest ? 'header' : ''
       }`}
       data-header
@@ -20,7 +20,7 @@ export function Menu({ classTest }: Ref): JSX.Element {
       >
         <div className="flex flex-row justify-center p-2">
           <button type="button" className="btn-inscrever">
-            Inscrever-se
+            Comprar Agora
           </button>
         </div>
       </div>

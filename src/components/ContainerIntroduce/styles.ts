@@ -1,11 +1,11 @@
 import styled, { css, StyledComponent } from 'styled-components';
 import { Theme } from '../../../styles/theme';
 
-export const MenuStyled: StyledComponent<
-  'header',
+export const StyledIntroduce: StyledComponent<
+  'div',
   any,
   object,
   never
-> = styled.header`
+> = styled.div`
   ${({ theme }: Theme) => css``}
 `;
